@@ -107,7 +107,11 @@ def scale_resolution(frame):
 # Main Streamlit app
 def main():
     st.title('Object Detection using Webcam')
-    st.write("Press 'q' to quit")
+    #st.write("Press 'q' to quit")
+    picture = st.camera_input("Take a picture")
+
+    if picture:
+        st.image(picture)
 
     # Open the webcam
     cap = cv2.VideoCapture(1)
