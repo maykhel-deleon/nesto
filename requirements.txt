@@ -2,3 +2,15 @@ streamlit-webrtc
 numpy
 opencv-python
 streamlit
+ipython  # interactive notebook
+psutil  # system utilization
+thop>=0.1.1  # FLOPs computation
+torch
+ultralytics
+imageio[ffmpeg]
+tensorflow
+matplotlib
+pillow
+
+
+
