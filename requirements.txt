@@ -8,7 +8,6 @@ torch
 ultralytics
 imageio[ffmpeg]
 opencv-contrib-python
-tensorflow
 matplotlib
 pillow
 
