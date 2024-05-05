@@ -110,7 +110,7 @@ def main():
     st.write("Press 'q' to quit")
 
     # Open the webcam
-    cap = cv2.VideoCapture(0, cv2.CAP_V4L)
+    cap = cv2.VideoCapture(-1)
 
     # Continuously capture frames
     while True:
