@@ -35,10 +35,10 @@ def tflite_detect_images(image, modelpath, lblpath, min_conf=0.5, txt_only=False
     
 
     # Convert the uploaded image to a PIL Image
-    uploaded_image = Image.open(image)
+    pil_image = Image.fromarray(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
 
     # Convert the PIL Image to a NumPy array
-    image = np.array(uploaded_image)
+    image = np.array(pil_image)
 
     # Check the data type of the image
     #st.write(image.dtype)
@@ -108,8 +108,17 @@ def scale_resolution(frame):
 def main():
     
   st.title('Object Detection using Webcam')
-  image=cv2.VideoCapture(0)
-  tflite_detect_images(image, PATH_TO_MODEL, PATH_TO_LABELS, min_conf=0.5, txt_only=False)
+  cap=cv2.VideoCapture(0)
+  ret, image = cap.read()
+
+# Check if the capture was successful
+  if not ret:
+    st.write("Failed to capture image")
+    exit()
+
+# Convert the OpenCV image (BGR) to PIL image (RGB)
+ 
+tflite_detect_images(image, PATH_TO_MODEL, PATH_TO_LABELS, min_conf=0.5, txt_only=False)
   
   
 
