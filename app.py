@@ -118,7 +118,7 @@ def main():
 
 # Convert the OpenCV image (BGR) to PIL image (RGB)
  
-tflite_detect_images(image, PATH_TO_MODEL, PATH_TO_LABELS, min_conf=0.5, txt_only=False)
+  tflite_detect_images(image, PATH_TO_MODEL, PATH_TO_LABELS, min_conf=0.5, txt_only=False)
   
   
 
