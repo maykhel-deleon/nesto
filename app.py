@@ -106,27 +106,37 @@ def scale_resolution(frame):
     
 # Main Streamlit app
 def main():
-    
-  st.title('Object Detection using Webcam')
-  cap=cv2.VideoCapture(0)
-  ret, image = cap.read()
+    st.title('Object Detection using Webcam')
+    st.write("Press 'q' to quit")
 
-# Check if the capture was successful
-  if not ret:
-    st.write("Failed to capture image")
-    exit()
+    # Open the webcam
+    cap = cv2.VideoCapture(0)
 
-# Convert the OpenCV image (BGR) to PIL image (RGB)
- 
-  tflite_detect_images(image, PATH_TO_MODEL, PATH_TO_LABELS, min_conf=0.5, txt_only=False)
-  
-  
+    # Continuously capture frames
+    while True:
+        ret, frame = cap.read()
 
-    
+        # Check if the capture was successful
+        if not ret:
+            st.write("Failed to capture image")
+            break
 
-   
-    
+        # Convert the OpenCV image (BGR) to PIL image (RGB)
+        pil_image = Image.fromarray(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
 
-        
+        # Perform object detection on pil_image using tflite_detect_images function
+        tflite_detect_images(pil_image, PATH_TO_MODEL, PATH_TO_LABELS, min_conf=0.5, txt_only=False)
+
+        # Display the frame with Streamlit
+        st.image(frame, channels="BGR")
+
+        # Check for 'q' key press to exit
+        if cv2.waitKey(1) & 0xFF == ord('q'):
+            break
+
+    # Release the webcam and close the Streamlit app
+    cap.release()
+    cv2.destroyAllWindows()
+
 if __name__ == '__main__':
     main()
