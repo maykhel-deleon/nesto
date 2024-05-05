@@ -1,3 +1,4 @@
+tensorflow
 streamlit-webrtc
 numpy
 streamlit
