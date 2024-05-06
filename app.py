@@ -169,7 +169,7 @@ def tflite_detect_images(image, modelpath, lblpath, min_conf=0.5, txt_only=False
 
 # Main Streamlit app
 def main():
-    st.title('Object Detection using Image Upload')
+    st.title('Object Detection using Web Camera')
 
     image = camera_input_live()
 
