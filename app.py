@@ -173,12 +173,12 @@ def main():
 
     image = camera_input_live()
 
-  if image:
+    if image:
     #st.image(image)
-    min_conf_threshold = st.slider('Confidence Threshold', 0.0, 1.0, 0.5, 0.01)
+        min_conf_threshold = st.slider('Confidence Threshold', 0.0, 1.0, 0.5, 0.01)
 
         #if st.button('Start Detection'):
-    tflite_detect_images(image, PATH_TO_MODEL, PATH_TO_LABELS, min_conf_threshold)
+        tflite_detect_images(image, PATH_TO_MODEL, PATH_TO_LABELS, min_conf_threshold)
             # Do further processing with detections if needed
 
 if __name__ == '__main__':
