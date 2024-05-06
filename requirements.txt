@@ -11,6 +11,6 @@ imageio[ffmpeg]
 opencv-contrib-python
 matplotlib
 pillow
-
+mediapipe
 
 
