@@ -7,3 +7,4 @@ cap = cv2.VideoCapture(1)
 
 st.title("Obj Det webcam")
 frame_placeholder = st.empty()
+st.write(cap.isOpened())
