@@ -8,7 +8,7 @@ thop>=0.1.1  # FLOPs computation
 torch
 ultralytics
 imageio[ffmpeg]
-opencv-contrib-python
+opencv-python=3.4.1
 matplotlib
 pillow
 mediapipe
