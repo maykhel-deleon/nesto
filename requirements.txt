@@ -12,5 +12,6 @@ opencv-contrib-python-headless
 matplotlib
 pillow
 mediapipe
+streamlit-camera-input-live
 
 
