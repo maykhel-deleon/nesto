@@ -5,5 +5,5 @@ import numpy as np
 # For webcam input:
 cap = cv2.VideoCapture(1)
 
-st.tile("Obj Det webcam")
+st.title("Obj Det webcam")
 frame_placeholder = st.empty()
